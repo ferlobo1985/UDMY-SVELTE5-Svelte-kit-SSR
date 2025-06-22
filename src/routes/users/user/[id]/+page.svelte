@@ -1,15 +1,18 @@
 <script>
-    import { page } from '$app/state';
     let { data } = $props();
     console.log(data)
 </script>
 
-<h3>User by ID: {page.params.id}</h3>
+<h3>User by ID: {data.params.id}</h3>
 <hr/>
-<ul>
+<div>
+     <strong>{data.users.name}</strong> - {data.users.email}
+</div>
+
+<!-- <ul>
     {#each data.users as user(user.id)}
         <li>
             <strong>{user.name}</strong> - {user.email}
         </li>
     {/each}
-</ul>
+</ul> -->
