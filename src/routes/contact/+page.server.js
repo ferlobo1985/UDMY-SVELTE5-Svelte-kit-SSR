@@ -1,7 +1,7 @@
 import { fail } from '@sveltejs/kit';
 
 export const actions = {
-    default: async({request})=>{
+    nameofform: async({request})=>{
         const formData = await request.formData();
         const name = formData.get('name');
         const errors = {};

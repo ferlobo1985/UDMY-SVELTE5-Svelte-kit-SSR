@@ -4,7 +4,10 @@
     // console.log(form)
 </script>
 
-<form method="POST" use:enhance={({ formElement, formData, action, cancel})=>{
+<form 
+    method="POST"
+    action="?/nameofform" 
+    use:enhance={({ formElement, formData, action, cancel})=>{
     console.log(formElement) // DOM ELEMENT
     console.log(formData.get('name')) // FORMDATA OBJECT
     console.log(action) // WHERE POSTED ?
