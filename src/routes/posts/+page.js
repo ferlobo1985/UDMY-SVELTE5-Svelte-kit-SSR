@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { error } from '@sveltejs/kit'
+import { error, redirect } from '@sveltejs/kit'
 
 export async function load(){
     try{
@@ -10,6 +10,7 @@ export async function load(){
             posts:posts
         }
     } catch(err){
-        throw error(500, 'Failed to fetch posts')
+        //throw error(500, 'Failed to fetch posts')
+        redirect(307,'/')
     }
 }
