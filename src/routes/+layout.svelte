@@ -1,4 +1,5 @@
 <script>
+    import { page } from '$app/state';
     let { children } = $props();
 </script>
 <div class="container">
@@ -10,18 +11,26 @@
 
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a href="/" class="nav-link">Home</a>
+          <a href="/" class="nav-link"
+            class:active={page.url.pathname === '/'}
+          >Home</a>
         </li>
         <li class="nav-item">
-          <a href="/contact" class="nav-link">Contact</a>
+          <a href="/contact" class="nav-link"
+          class:active={page.url.pathname === '/contact'}
+          >Contact</a>
         </li>
         <li class="nav-item">
-          <a href="/users" class="nav-link">Users</a>
+          <a href="/users" class="nav-link"
+            class:active={page.url.pathname === '/users'}
+          >Users</a>
         </li>
         <li 
           data-sveltekit-preload-data
           class="nav-item">
-          <a href="/posts" class="nav-link">Posts</a>
+          <a href="/posts" class="nav-link"
+          class:active={page.url.pathname === '/posts'}
+          >Posts</a>
         </li>
       </ul>
     </header>
