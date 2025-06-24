@@ -1,9 +1,19 @@
 <script>
+    import { enhance } from "$app/forms";
     let { form } = $props();
-    console.log(form)
+    // console.log(form)
 </script>
 
-<form method="POST">
+<form method="POST" use:enhance={({ formElement, formData, action, cancel})=>{
+    console.log(formElement) // DOM ELEMENT
+    console.log(formData.get('name')) // FORMDATA OBJECT
+    console.log(action) // WHERE POSTED ?
+    //cancel()
+    return async ({result, update})=>{
+        console.log(result)
+        update();
+    }
+}}>
     <div class="mb-3">
         <label for="name" class="form-label">Your name</label>
         <input type="text" class="form-control" name="name"/>
