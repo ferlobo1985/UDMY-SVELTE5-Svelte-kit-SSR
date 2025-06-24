@@ -1,4 +1,6 @@
 <script>
+    import { PUBLIC_API_KEY } from '$env/static/public';
+ 
     let { data } = $props();
     console.log(data)
 </script>
