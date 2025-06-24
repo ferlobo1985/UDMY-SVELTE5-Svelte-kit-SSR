@@ -1,13 +1,19 @@
+import { fail } from '@sveltejs/kit';
 
 export const actions = {
     default: async({request})=>{
         const formData = await request.formData();
         const name = formData.get('name');
+        const errors = {};
 
-        return {
-            success: true,
-            username:`The name is ${name}`
+        if(!name){
+            errors.name = 'The input is empty';
         }
 
+        if(!errors.name){
+            return { success: true}
+        }
+
+        return fail(422,{errors})
     }
 }
