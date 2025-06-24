@@ -1,21 +1,12 @@
 <script>
-    import { afterNavigate, beforeNavigate, goto, onNavigate } from "$app/navigation";
-
-    afterNavigate(()=>{
-        /// WHEN NAVIGATE TO LOCATION
-        console.log('After navigate')
-    })
-
-    beforeNavigate(()=>{
-        /// WHEN NAVIGATE OUT OF LOCATION
-        console.log('Before navigate')
-    })
-
-    onNavigate(()=>{
-        console.log('on navigate')
-    })
-
+    let { form } = $props();
+    console.log(form)
 </script>
 
-<h1>This is the contact page</h1>
-<button onclick={()=>goto('/')}>Redirect page</button>
+<form method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Your name</label>
+        <input type="text" class="form-control" name="name"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

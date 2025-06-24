@@ -1,5 +1,13 @@
-import { redirect } from "@sveltejs/kit";
 
-export async function load() {
-    //redirect(307,'/')
+export const actions = {
+    default: async({request})=>{
+        const formData = await request.formData();
+        const name = formData.get('name');
+
+        return {
+            success: true,
+            username:`The name is ${name}`
+        }
+
+    }
 }
