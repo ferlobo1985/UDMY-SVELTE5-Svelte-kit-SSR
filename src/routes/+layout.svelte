@@ -18,6 +18,11 @@
         <li class="nav-item">
           <a href="/users" class="nav-link">Users</a>
         </li>
+        <li 
+          data-sveltekit-preload-data
+          class="nav-item">
+          <a href="/posts" class="nav-link">Posts</a>
+        </li>
       </ul>
     </header>
     <div>
