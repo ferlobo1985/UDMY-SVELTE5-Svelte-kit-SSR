@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { error } from '@sveltejs/kit';
 
+// export const prerender = false;
+
 export async function load({data,params}){
     try{
         const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${params.id}`);
